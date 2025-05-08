@@ -1875,7 +1875,11 @@ public class ExploCoopBehaviour extends SimpleBehaviour {
 			if (closestNode.equals(myPosition)) {
 				this.isStationary = true;
 				// attempt to unlock the treasure
-				attemptOpenLock(closestNode);
+				boolean isLockOpen = attemptOpenLock(closestNode);
+		        if (isLockOpen) {
+	                this.missionType = null; // Mark mission as done
+	                return;
+		        }
 			}
 		}
 		
@@ -1896,7 +1900,26 @@ public class ExploCoopBehaviour extends SimpleBehaviour {
 			if (closestNode.equals(myPosition)) {
 				this.isStationary = true;
 				// attempt to pick up the treasure
-				attemptPickUpTreasure(closestNode);
+				int pickedAmount = attemptPickUpTreasure(myPosition);
+                TreasureInfo treasureInfo = this.knownTreasures.get(myPosition);
+                if (pickedAmount > 0 || (treasureInfo != null && treasureInfo.amount == 0 && treasureInfo.lockIsOpen)) {
+                     if (missionVerbose) {
+                        System.out.println("\u001B[32m" + this.myAgent.getLocalName() + " - pickUpTreasure at " + myPosition + " complete or treasure gone. Picked: " + pickedAmount + "\u001B[0m");
+                    }
+                    this.missionType = null;
+                    return;
+                } else if (treasureInfo != null && !treasureInfo.lockIsOpen) {
+                     if (missionVerbose) {
+                        System.out.println("\u001B[31m" + this.myAgent.getLocalName() + " - pickUpTreasure at " + myPosition + ": Lock is closed. Mission should have been unlockAndPickUpTreasure or unlockTreasure first." + "\u001B[0m");
+                        this.missionType = null;
+                        return;
+                        //TODO this can be another treasure maybe ?
+                    }
+                } else {
+                    if (missionVerbose) {
+                        System.out.println("\u001B[33m" + this.myAgent.getLocalName() + " - pickUpTreasure at " + myPosition + ": Failed to pick (e.g. no capacity, wrong type, or already empty but knownTreasures not updated). Mission continues." + "\u001B[0m");
+                    }
+                }
 			}
 		}
 		
@@ -1917,11 +1940,38 @@ public class ExploCoopBehaviour extends SimpleBehaviour {
 			if (closestNode.equals(myPosition)) {
 				this.isStationary = true;
 				// attempt to unlock and pick up the treasure
-				attemptOpenLock(closestNode);
-				attemptPickUpTreasure(closestNode);
+				boolean isLockOpen = attemptOpenLock(myPosition);
+				int pickedAmount = attemptPickUpTreasure(myPosition);
+				TreasureInfo treasureInfo = this.knownTreasures.get(myPosition);
+				if (pickedAmount > 0 || (treasureInfo != null && treasureInfo.amount == 0 && treasureInfo.lockIsOpen)) {
+					if (missionVerbose) {
+						System.out.println("\u001B[32m" + this.myAgent.getLocalName() + " - unlockAndPickUpTreasure at "
+								+ myPosition + " complete or treasure gone. Picked: " + pickedAmount + "\u001B[0m");
+					}
+					this.missionType = null;
+					return;
+				} else if (treasureInfo != null && !treasureInfo.lockIsOpen) {
+					if (missionVerbose) {
+						System.out.println("\u001B[31m" + this.myAgent.getLocalName() + " - unlockAndPickUpTreasure at "
+								+ myPosition
+								+ ": Lock is closed. Mission should have been unlockAndPickUpTreasure or unlockTreasure first."
+								+ "\u001B[0m");
+						this.missionType = null;
+						return;
+						// TODO this can be another treasure maybe ?
+					}
+				} else {
+					if (missionVerbose) {
+						System.out.println("\u001B[33m" + this.myAgent.getLocalName() + " - unlockAndPickUpTreasure at "
+								+ myPosition
+								+ ": Failed to pick (e.g. no capacity, wrong type, or already empty but knownTreasures not updated). Mission continues."
+								+ "\u001B[0m");
+					}
+				}
 			}
 		}
 	}
+
 	
 	private void actionExploitationAgent(Location myPosition, List<Couple<Location,List<Couple<Observation,String>>>> listObservations, List<String> visibleAgents, List<String> obstacles) {
 		// 2) pickup treasure if mission is to pick up treasure

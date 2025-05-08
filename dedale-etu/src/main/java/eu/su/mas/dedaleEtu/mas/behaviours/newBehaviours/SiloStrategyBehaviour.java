@@ -324,7 +324,7 @@ public class SiloStrategyBehaviour extends SimpleBehaviour {
 	        //this.finished = true;
 			if (System.currentTimeMillis() - this.start > 60000) {
 				if (this.verbosePorgress) {
-					System.out.println("\u001B[32m" + "Finished: No tasks valuable enough left"+ "\u001B[0m");
+					System.out.println("\u001B[36m" + "\n Finished: No tasks valuable enough left \n"+ "\u001B[0m");
 				}
 			}
 	    }
@@ -508,9 +508,9 @@ public class SiloStrategyBehaviour extends SimpleBehaviour {
 		case "collect":
 			resourceType = (String) task.get("ressourceType");
 			amount = (int) task.get("amount");
-			if (resourceType.equals("gold") && backPackCapacityGold > 0 && amount <= backPackCapacityGold) {
+			if ("gold".equalsIgnoreCase(resourceType) && backPackCapacityGold > 0 && amount <= backPackCapacityGold) {
 				return true;
-			} else if (resourceType.equals("diamond") && backPackCapacityDiamond > 0 && amount <= backPackCapacityDiamond) {
+			} else if ("diamond".equalsIgnoreCase(resourceType) && backPackCapacityDiamond > 0 && amount <= backPackCapacityDiamond) {
 				return true;
 			}
 			return false;
@@ -518,9 +518,9 @@ public class SiloStrategyBehaviour extends SimpleBehaviour {
 
 			resourceType = (String) task.get("ressourceType");
 			amount = (int) task.get("amount");
-			if (resourceType.equals("gold") && backPackCapacityGold > 0) {
+			if ("gold".equalsIgnoreCase(resourceType) && backPackCapacityGold > 0) {
 				return true;
-			} else if (resourceType.equals("diamond") && backPackCapacityDiamond > 0) {
+			} else if ("diamond".equalsIgnoreCase(resourceType) && backPackCapacityDiamond > 0) {
 				return true;
 			}
 			return false;
@@ -537,12 +537,12 @@ public class SiloStrategyBehaviour extends SimpleBehaviour {
             strengthRequirements = (int) task.get("strengthRequirements");
             lockPickingRequirements = (int) task.get("lockPickingRequirements");
             if (strengthExpertise >= strengthRequirements && lockPickingExpertise >= lockPickingRequirements) {
-            	if (resourceType.equals("gold") && backPackCapacityGold > 0 && amount <= backPackCapacityGold) {
-            		return true;
-            	} else if (resourceType.equals("diamond") && backPackCapacityDiamond > 0 && amount <= backPackCapacityDiamond) {
-            		return true;
-            	}
-            }
+				if ("gold".equalsIgnoreCase(resourceType) && backPackCapacityGold > 0 && amount <= backPackCapacityGold) {
+					return true;
+				} else if ("diamond".equalsIgnoreCase(resourceType) && backPackCapacityDiamond > 0 && amount <= backPackCapacityDiamond) {
+					return true;
+				}
+			}
             return false;
 		}
 		return false;
