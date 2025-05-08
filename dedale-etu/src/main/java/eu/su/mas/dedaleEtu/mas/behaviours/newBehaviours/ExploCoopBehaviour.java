@@ -1315,7 +1315,7 @@ public class ExploCoopBehaviour extends SimpleBehaviour {
 			// 3.3) reduce the deadlocks
 			// 3.3.1) get a node with a high number of edges			
 			int numberOfEdges = neighborNodes.size();
-			multiplier *= (float) 1 / (float) numberOfEdges;
+			multiplier *= (float) 1 / (float) (numberOfEdges*numberOfEdges*numberOfEdges);
 			
 			// 3.3.2) avoid blocking paths
 			// IDEA : test what the best path is between each adjacent node if the silo occupies (and therefore blocks) 
