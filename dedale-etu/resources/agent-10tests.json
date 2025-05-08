@@ -1,0 +1,112 @@
+[
+{ 
+  "agentType":"agentCollect",
+  "agentName": "Agent1",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 15,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":3
+  },
+  { 
+  "agentType":"agentCollect",
+  "agentName": "Agent2",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 100,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 2,
+  "lockPickingExpertise":1
+  },
+  { 
+  "agentType":"agentCollect",
+  "agentName": "Agent3",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 50,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":1
+  },
+  { 
+  "agentType":"agentCollect",
+  "agentName": "Agent4",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 15,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":3
+  },
+  {
+  "agentType":"agentCollect",
+  "agentName": "Agent5",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 100,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 2,
+  "lockPickingExpertise":1
+  },
+  { 
+  "agentType":"agentCollect",
+  "agentName": "Agent6",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 50,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":1
+  },
+  { 
+  "agentType":"agentCollect",
+  "agentName": "Agent7",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 15,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":3
+  },
+  {
+  "agentType":"agentCollect",
+  "agentName": "Agent8",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 100,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 2,
+  "lockPickingExpertise":1
+  },
+  { 
+  "agentType":"agentCollect",
+  "agentName": "Agent9",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 50,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":1
+  },
+  { 
+  "agentType":"agentCollect",
+  "agentName": "Agent10",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 15,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":3
+  }
+]

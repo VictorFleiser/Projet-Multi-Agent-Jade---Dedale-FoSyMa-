@@ -1,0 +1,90 @@
+[
+{ 
+  "agentType":"agentCollect",
+  "agentName": "Tim",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": -1,
+  "backPackCapacityDiamond":50, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":3
+  },
+  { 
+  "agentType":"agentCollect",
+  "agentName": "Elsa",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 50,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 3,
+  "lockPickingExpertise":1
+  },
+  { 
+  "agentType":"agentCollect",
+  "agentName": "John",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 15,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 2,
+  "lockPickingExpertise":2
+  },
+  { 
+  "agentType":"agentExplo",
+  "agentName": "Paul",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": -1,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":2
+  },
+  { 
+  "agentType":"agentTanker",
+  "agentName": "Anna",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 1000,
+  "backPackCapacityDiamond":1000, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":1
+  },
+    { 
+  "agentType":"agentTanker",
+  "agentName": "Silo",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 1000,
+  "backPackCapacityDiamond":1000, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":1
+  },
+  { 
+  "agentType":"wumpus",
+  "agentName": "Golem",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": 100,
+  "backPackCapacityDiamond":-1, 
+  "detectionRadius": 0,
+  "strengthExpertise": 2,
+  "lockPickingExpertise":1
+  },
+    { 
+  "agentType":"wumpus",
+  "agentName": "Golem2",
+  "communicationRange": 3,
+  "initialLocation": "free",
+  "backPackCapacityGold": -1,
+  "backPackCapacityDiamond":100, 
+  "detectionRadius": 0,
+  "strengthExpertise": 1,
+  "lockPickingExpertise":2
+  }
+]
