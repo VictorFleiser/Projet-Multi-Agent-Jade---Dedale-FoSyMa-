@@ -62,7 +62,7 @@ public class SiloStrategyBehaviour extends SimpleBehaviour {
      */
 	private List<Map<String, Object>> sortedTasks;
 	
-	private long timeBetweenTasksReset = 20000; // 7 seconds between each task reset
+	private long timeBetweenTasksReset = 5000; // 7 seconds between each task reset
 	
 	// the portion of tasks to look for, out of 5
 	// so 1 means we will look only through the best 20% tasks
